@@ -1,88 +1,165 @@
-* {
+*{ 
+  overflow: hidden;
+  padding: 0.5vh;
   color: white;
 }
 
-  li{
-  list-style:none;
-  text-decoration: none;
-}
-a{
-  text-decoration: none;
-}
-nav {
-  position: absolute;
-width: 1350px;
-height: 80px;
-left: 0px;
-top: 0px;
-background: #000000;
+
+@media screen and (max-width:411px) {
+  nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "hamburguer logo about";
+    margin: 0;
+    padding: 0;
+    background-color: black;
+  }
+  
+  img {
+    grid-area: logo;
+    margin: auto;
+    display: block;
+    width: 30vw;
+  }
+  
+  ul {
+    display: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    list-style-type: none;
+  }
+  
+  a {
+    display: none;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 2vh;
+  }
+  
+  .hamburguer {
+    width: 10vw;
+    grid-area: hamburguer;
+  }
+} 
+/* Mobile */
+@media screen and (min-width:412px) and (max-width:768px) {
+  nav {
+    display: grid;
+    grid-template-columns: 0.4fr 1fr;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+  }
+  
+  img {
+    margin: auto;
+    display: block;
+    width: 20vw;
+  }
+  
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    list-style-type: none;
+  }
+  
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 2vh;
+  }
+  
+  .hamburguer {
+    display: none;
+  }
 }
 
-.logo {
-  width: 15%;
+/* Tablet */
+@media screen and (min-width:769px) and (max-width:991px) {
+  nav {
+    display: grid;
+    grid-template-columns: 0.4fr 1fr;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+  }
+  
+  img {
+    margin: auto;
+    display: block;
+    width: 20vw;
+  }
+  
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    list-style-type: none;
+  }
+  
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 2vh;
+  }
+  
+  .hamburguer {
+    display: none;
+  }
 }
 
-.imchar{
-  position: absolute;
-width: 150px;
-height: 36px;
-left: 200px;
-top: 20px;
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 30px;
-line-height: 35px;
-text-align: center;
-color: #FFFFFF;
-border: 1px solid #000000;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+/* Desktop */
+@media screen and (min-width:992px) and (max-width:1199px) {
+  nav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+  }
+  
+  img {
+    width: 10vw;
+  }
+  
+  ul {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 2vh;
+  }
+  
+  .hamburguer {
+    display: none;
+  }
 }
-.mnist{
-  position: absolute;
-width: 150px;
-height: 36px;
-left: 400px;
-top: 20px;
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 30px;
-line-height: 35px;
-text-align: center;
-color: #FFFFFF;
-border: 1px solid #000000;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.perceptrons{
-  position: absolute;
-width: 150px;
-height: 36px;
-left: 600px;
-top: 20px;
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 30px;
-line-height: 35px;
-text-align: center;
-color: #FFFFFF;
-border: 1px solid #000000;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.about{
-  position: absolute;
-width: 150px;
-height: 36px;
-left: 900px;
-top: 20px;
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 30px;
-line-height: 35px;
-text-align: center;
-color: #FFFFFF;
-border: 1px solid #000000;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+@media screen and (min-width:1200px) {
+  nav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+  }
+  
+  img {
+    width: 10vw;
+  }    
+  
+  ul {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 2vh;
+  }
+  
+  .hamburguer {
+    display: none;
+  }
 }
