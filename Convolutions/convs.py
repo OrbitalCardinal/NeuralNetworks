@@ -140,4 +140,4 @@ def test():
     print(test_conv)
 
 # test()
-plotKernels()
+#plotKernels()
