@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "TriNet"
+    }
+  },
+  "defaultProject": "TriNet",
+  "cli": {
+    "analytics": false
+  }
 }
