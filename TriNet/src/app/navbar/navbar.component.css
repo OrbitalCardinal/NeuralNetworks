@@ -21,15 +21,14 @@
     display: block;
     width: 30vw;
   }
-  
+
   ul {
-    display: none;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     list-style-type: none;
   }
   
-  a {
+  ul a {
     display: none;
     text-decoration: none;
     font-weight: bold;

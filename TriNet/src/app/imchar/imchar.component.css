@@ -1,4 +1,12 @@
 /* este es todos los celulares menos el plus*/
+
+button {
+    padding:2vw;
+    font-size: 2vh;
+    font-weight: bold;
+    border-radius: 2vh;
+}
+
 @media screen and (max-width:411px){
     .contenedor{
         display: grid;
