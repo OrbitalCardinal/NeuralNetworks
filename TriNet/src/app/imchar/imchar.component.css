@@ -1,0 +1,283 @@
+/* este es todos los celulares menos el plus*/
+@media screen and (max-width:411px){
+    .contenedor{
+        display: grid;
+        grid-gap: 5px;
+        padding: 5px;
+    }
+    .item{
+        text-align: center;
+        padding: 20px;
+    }
+    .imchar{
+        grid-column: 1/3;
+        grid-row: 1;
+    }
+    .p{
+        grid-column: 1/3;
+        grid-row: 2;
+    }
+    .cuadro{
+        grid-column: 1/3;
+        grid-row: 3;
+        border: 2px solid black;
+        height: 200px;
+        padding: 20px;
+        margin: 10px;
+    }
+    .boton{
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .boton2{
+        grid-column: 2;
+        grid-row: 4;
+    }
+    .cuadrado2{
+        grid-column: 1/3;
+        grid-row: 5;
+        border: 2px solid black;
+        height: 200px;
+        padding: 20px;
+        margin: 10px;
+    }
+    .uno{
+        border: 2px solid aqua;
+        margin: 10px 6px;
+        background-color: white;
+        color:aqua;
+    }
+    .dos{
+        border: 2px solid pink;
+        margin: 10px 6px;
+        background-color: white;
+        color: pink;
+    }
+}
+  
+/* Tablet*/ 
+@media screen and (min-width:769px) and (max-width:991px){
+    .contenedor{
+        display: grid;
+        grid-gap: 5px;
+        padding: 5px;
+    }
+    .item{
+        text-align: center;
+        padding: 20px;
+    }
+    .imchar{
+        grid-column: 1/3;
+        grid-row: 1;
+    }
+    .p{
+        grid-column: 1/3;
+        grid-row: 2;
+    }
+    .cuadro{
+        grid-column: 1/3;
+        grid-row: 3;
+        border: 2px solid black;
+        height: 200px;
+        padding: 20px;
+        margin: 10px;
+    }
+    .boton{
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .boton2{
+        grid-column: 2;
+        grid-row: 4;
+    }
+    .cuadrado2{
+        grid-column: 1/3;
+        grid-row: 5;
+        border: 2px solid black;
+        height: 200px;
+        padding: 20px;
+        margin: 10px;
+    }
+    .uno{
+        border: 2px solid aqua;
+        margin: 10px 6px;
+        background-color: white;
+        color:aqua;
+    }
+    .dos{
+        border: 2px solid pink;
+        margin: 10px 6px;
+        background-color: white;
+        color: pink;
+    }
+}
+
+/* Mobile */
+@media screen and (min-width:412px) and (max-width:768px){
+    .contenedor{
+        display: grid;
+        grid-gap: 5px;
+        padding: 5px;
+    }
+    .item{
+        text-align: center;
+        padding: 20px;
+    }
+    .imchar{
+        grid-column: 1/3;
+        grid-row: 1;
+    }
+    .p{
+        grid-column: 1/3;
+        grid-row: 2;
+    }
+    .cuadro{
+        grid-column: 1/3;
+        grid-row: 3;
+        border: 2px solid black;
+        height: 200px;
+        padding: 20px;
+        margin: 10px;
+    }
+    .boton{
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .boton2{
+        grid-column: 2;
+        grid-row: 4;
+    }
+    .cuadrado2{
+        grid-column: 1/3;
+        grid-row: 5;
+        border: 2px solid black;
+        height: 200px;
+        padding: 20px;
+        margin: 10px;
+    }
+    .uno{
+        border: 2px solid aqua;
+        margin: 10px 6px;
+        background-color: white;
+        color:aqua;
+    }
+    .dos{
+        border: 2px solid pink;
+        margin: 10px 6px;
+        background-color: white;
+        color: pink;
+    }
+}
+
+/*Desktop*/
+@media screen and (min-width:992px) and (max-width:1199px){
+    .contenedor{
+        display: grid;
+        grid-gap: 5px;
+        padding: 5px;
+    }
+    .item{
+        text-align: center;
+        padding: 20px;
+    }
+    .imchar{
+        grid-column: 1/6;
+        grid-row: 1;
+    }
+    .p{
+        grid-column: 1/6;
+        grid-row: 2;
+    }
+    .cuadro{
+        grid-column: 1/3;
+        grid-row: 3;
+        border: 2px solid black;
+        height: 200px;
+        padding: 20px;
+        margin: 10px;
+    }
+    .boton{
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .boton2{
+        grid-column: 2;
+        grid-row: 4;
+    }
+    .cuadrado2{
+        grid-column: 3/6;
+        grid-row: 3;
+        border: 2px solid black;
+        height: 200px;
+        padding: 20px;
+        margin: 10px;
+    }
+    .uno{
+        border: 2px solid aqua;
+        margin: 10px 6px;
+        background-color: white;
+        color:aqua;
+    }
+    .dos{
+        border: 2px solid pink;
+        margin: 10px 6px;
+        background-color: white;
+        color: pink;
+    }
+}
+/*escritorio*/
+@media screen and (min-width:1200px){
+    .contenedor{
+        display: grid;
+        grid-gap: 5px;
+        padding: 5px;
+    }
+    .item{
+        text-align: center;
+        padding: 20px;
+    }
+    .imchar{
+        grid-column: 1/6;
+        grid-row: 1;
+    }
+    .p{
+        grid-column: 1/6;
+        grid-row: 2;
+    }
+    .cuadro{
+        grid-column: 1/3;
+        grid-row: 3;
+        border: 2px solid black;
+        height: 200px;
+        padding: 20px;
+        margin: 10px;
+    }
+    .boton{
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .boton2{
+        grid-column: 2;
+        grid-row: 4;
+    }
+    .cuadrado2{
+        grid-column: 3/6;
+        grid-row: 3;
+        border: 2px solid black;
+        height: 200px;
+        padding: 20px;
+        margin: 10px;
+    }
+    .uno{
+        border: 2px solid aqua;
+        margin: 10px 6px;
+        background-color: white;
+        color:aqua;
+    }
+    .dos{
+        border: 2px solid pink;
+        margin: 10px 6px;
+        background-color: white;
+        color: pink;
+    }
+}
