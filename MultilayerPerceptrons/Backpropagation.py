@@ -3,9 +3,6 @@ import numpy as np
 def g(p):
     return 1 + np.sin(np.pi/4 * p)
 
-#Training set 
-training_set = g(np.arange(-2,2.2,0.2))
-
 def sigmoid(x, deriv = False):
     result = 1 / (1 + np.exp(-x))
     return result
@@ -19,16 +16,39 @@ def linear(x, deriv=False):
     if deriv:
         return 1
     return x
+
+def jacobian()
     
+#Training set 
+training_set = g(np.arange(-2,2.2,0.2))
+
 #Initializing weights and biases
+m = 2 #Number of layers
 W1 = np.array([-0.27, -0.41])
 b1 = np.array([-0.48, -0.13])
 W2 = np.array([0.09, -0.17])
 b2 = np.array([0.48])
-
+weights = [W1,W2]
+biases = [b1,b2]
+activation_function = ["sigmoid","linear"]
+results = []
+sensitivities = []
 p = 1
-#Training
-#Watch the sequence of operations
+
+for i in range(m):
+    if activation_function[i] == "sigmoid":
+        results.append(sigmoid(np.dot(weights[i],p) + biases[i]))
+    elif activation_function[i] == "linear":
+        results.append(linear(np.dot(weights[i],results[i-1]) + biases[i]))
+e = g(p) - results[-1]
+for i in range(m):
+    sensitivities.append()
+
+    
+        
+
+# #Training
+# #Watch the sequence of operations
 a1 = sigmoid(np.dot(W1,p) + b1)
 a2 = linear(np.dot(W2,a1) + b2)
 e = g(p) - a2
