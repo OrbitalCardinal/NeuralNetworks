@@ -46,8 +46,8 @@ deltas = [] #sensitivities
 weights = [w1,w2]
 outputs = [inputs]
 biases = [b1,b2]
-lr = 0.01 #Learning rate
-iterations = 5000
+lr = 0.5 #Learning rate
+iterations = 2
 for it in range(iterations):
     #Forward pass
     for i in range(m):
