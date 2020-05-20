@@ -5,9 +5,6 @@ import Kernels
 import Convolutions
 import Pooling
 import RELU
-
-def sigmoid(x):
-    return(1/(1 + np.exp(-x)))
     
 def multiPlotting(img_array, img_names):
     fig = plt.figure(figsize=(18,len(img_array)))
@@ -47,8 +44,8 @@ class ConvNet():
                     inputImage = RELU.RELU(inputImage)
                     # process_sequence.append(inputImage)
                     # img_names.append(i[0])
-            # multiPlotting(process_sequence,img_names)
             neurons_results.append(inputImage)
+        # multiPlotting(process_sequence,img_names)
         return np.array(neurons_results)
                  
 XosNet = ConvNet(
@@ -60,15 +57,15 @@ XosNet = ConvNet(
 )
          
 #Intialize weights and biases
-weights = np.random.rand(12,2)  
-bias = np.random.rand(1,2)
+weights = np.asmatrix(np.random.rand(2,12))
+bias = np.asmatrix(np.random.rand(12,1))
 
 #Data
 images = np.array(["X.png","X_S.png", "X_G.png", "X_A.png", "C.png", "C_S.png", "C_A.png", "C_G.png"])   
-correct_result = np.array([[1,0],[1,0],[1,0],[1,0],[0,1],[0,1],[0,1],[0,1]])
-            
-# test_image = cv.imread("X.png",0)
-# test_image = test_image/255
-# test_image[test_image <= 0] = -1
-# result_convs = XosNet.process(test_image).reshape(1,12)
-# print(sigmoid(np.dot(result_convs,weights) + bias))
+correct_result = np.array([[1,0],[1,0],[1,0],[1,0],[0,1],[0,1],[0,1],[0,1]])   
+test_image = cv.imread("X.png",0)
+test_image = test_image/255
+test_image[test_image <= 0] = -1
+result_convs = XosNet.process(test_image).flatten().reshape((12,1))
+result_convs = np.asmatrix(result_convs)
+print(sigmoid(np.dot(result_convs,weights) + bias))
