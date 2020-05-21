@@ -11,7 +11,7 @@ export class ImcharComponent implements OnInit {
     ngOnInit() {
         const sketch = s => {
             s.setup = () => {
-                let canvas2 = s.createCanvas(200,200);
+                let canvas2 = s.createCanvas(400,400);
                 canvas2.parent("sketch");
                 s.background(0);
             };
