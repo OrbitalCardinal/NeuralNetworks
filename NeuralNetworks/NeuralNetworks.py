@@ -84,16 +84,16 @@ class NeuralNetwork():
 # w2= np.matrix([[0.40,0.45],[0.50,0.55]])
 # b1 = 0.35
 # b2 = 0.60
-# inputs = np.matrix([[1]])
+# inputs = np.matrix([[1],[2]])
 # t = 1 + np.sin((np.pi/4)*inputs)
-# w1 = np.matrix([[-0.27],[-0.41]])
-# w2 = np.matrix([0.09, -0.17])
+# w1 = np.matrix([[-0.27,-0.41],[-0.27,-0.41]])
+# w2 = np.matrix([[0.09, -0.17],[0.09, -0.17]])
 # b1 = np.matrix([[-0.48],[-0.13]])
-# b2 = np.matrix([[0.48]])
+# b2 = np.matrix([[0.48],[-0.13]])
 # #Architecture
 # layers = 2
-# neurons = [2,1]
-# activation = ["sigmoid","linear"]
+# neurons = [2,2]
+# activation = ["sigmoid","sigmoid"]
 # error = "SE"
 # #Network params
 # weights = [w1,w2]

@@ -7,14 +7,16 @@ def function(x):
 
 #Architecture
 layers = 2
-neurons = [2,1]
-activation = ["sigmoid","linear"]
+neurons = [2,2,1]
+activation = ["sigmoid","linear","linear"]
 error = "MSE"
 #weights and biases initialization
 w1 = np.matrix([[-0.27],[-0.41]])
-w2 = np.matrix([0.09, -0.17])
+w2 = np.matrix([[0.09, -0.17], [0.09, -0.17]])
+w3 = np.matrix([0.09, -0.17])
 b1 = np.matrix([[-0.48],[-0.13]])
-b2 = np.matrix([[-0.2]])
+b2 = np.matrix([[-0.2],[-0.04]])
+b3 = np.matrix([[0.09]])
 #Network params
 weights = [w1,w2]
 biases = [b1,b2]
@@ -38,5 +40,6 @@ for i in x1:
 plt.plot(x1,y1)
 plt.plot(x1,y2)
 plt.show()
+
     
 
