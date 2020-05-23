@@ -34,7 +34,6 @@
     }
     .cuadrado{
         grid-area: cuadrado;
-        border: 2px solid black;
         
     }
     .cuadrado2{
@@ -92,7 +91,6 @@
     }
     .cuadrado{
         grid-area: cuadrado;
-        border: 2px solid black;
         
     }
     .cuadrado2{
@@ -150,7 +148,6 @@
     }
     .cuadrado{
         grid-area: cuadrado;
-        border: 2px solid black;
         
     }
     .cuadrado2{
@@ -208,7 +205,6 @@
     }
     .cuadrado{
         grid-area: cuadrado;
-        border: 2px solid black;
         
     }
     .cuadrado2{
@@ -238,6 +234,9 @@
 /*escritorio*/
 @media screen and (min-width:1200px){
     .contenedor{
+        /* background-color: aqua; */
+        margin-left: 5vw;
+        margin-right: 5vw;
         display: grid;
         grid-template-areas:
         "descripcion descripcion descripcion descripcion"
@@ -265,7 +264,6 @@
     }
     .cuadrado{
         grid-area: cuadrado;
-        border: 2px solid black;
     }
     .cuadrado2{
         grid-area: cuadrado2;

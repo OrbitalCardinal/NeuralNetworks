@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import p5 from "p5";
-import { getLocaleTimeFormat } from '@angular/common';
 @Component({
     selector: 'imchar',
     templateUrl: './imchar.component.html',
@@ -10,43 +9,71 @@ import { getLocaleTimeFormat } from '@angular/common';
 export class ImcharComponent implements OnInit {
     @ViewChild("canvas") public canvas: ElementRef;
     ngOnInit() {
-        let sizeheight=200;
-        let sizewidth=200;
-        const sketch = s => {
-            s.setup = () => {
-                let canvas2 = s.createCanvas(400,400);
-                canvas2.parent("sketch");
-            };
-            s.draw = () => {
-                s.background(220);
-                for(s.y=0; s.y<sizeheight; s.y++){
-                    for(s.x=0; s.x<sizewidth; s.x++){
-                        if(s.getItem(s.x+":"+s.y)==null){
-                            s.storeItem(s.x +":"+ s.y, false)
-                        }
-                        if(s.getItem(s.x+":"+s.y)==true){
-                            s.fill(0);
-                        }
-                        s.rect(s.x*30, s.y*30, 30, 30)
-                            s.noFill();
+        let sketch = function(p) {
+            var n = 16;
+            var pixelArray = [];
+            var w = 400;
+            var h = 400;
+            var rows = w/n;
+            var columns = h/n;
+            
+            p.setup = function() {
+                p.frameRate(60);
+                let canvas2 = p.createCanvas(w,h);
+                canvas2.parent("grid");
+                for(var i=0; i<n; i++) {
+                    for(var j=0; j<n; j++) {
+                        var xpos = i * rows;
+                        var ypos = j * columns;
+                        pixelArray.push(new Pixel(xpos,ypos,rows,columns));
                     }
                 }
             }
-            s.mouseClicked = () =>{
-                for(s.y=0; s.y<sizeheight; s.y++){
-                    for(s.x=0; s.x<sizewidth; s.x++){
-                        if(s.mouseX < s.x*30+30 && s.mouseX > s.x*30 && s.mouseY < s.y*30+30 && s.mouseY > s.y*30){
-                            s.storeItem(s.x+":"+s.y, true)
+            
+            p.draw = function() {
+                p.background(0);
+                for(var i=0; i<pixelArray.length; i++) {
+                    pixelArray[i].show();
+                    if(p.mouseIsPressed) {
+                        for(var j=0; j<pixelArray.length; j++) {
+                            pixelArray[j].clicked(p.mouseX, p.mouseY);
                         }
                     }
                 }
             }
-            s.keyTyped = () =>{
-                if(s.key == " "){
-                    s.clearStorage()
+            
+            class Pixel {
+                x1: number;
+                y1: number;
+                x2: number;
+                y2: number;
+                color: number;
+                
+                constructor(x1: number, y1: number, x2: number, y2: number) {
+                    this.x1 = x1;
+                    this.y1 = y1;
+                    this.x2 = x2;
+                    this.y2 = y2;
+                    this.color = 0;
+                }
+                
+                clicked(x: number, y: number) {
+                    if(x > this.x1 && x < this.x1+rows && y > this.y1 && y < this.y1+columns) {
+                        this.color = 255;
+                    } else {
+                        if(this.color != 255) {
+                            this.color = 0;
+                        }
+                    }
+                }
+                
+                show() {
+                    p.stroke(50);
+                    p.fill(this.color);
+                    p.rect(this.x1,this.y1,this.x2,this.y2);
                 }
             }
-        };
+        }
         this.canvas = new p5(sketch);
     }
 }
