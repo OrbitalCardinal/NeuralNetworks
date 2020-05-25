@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import p5 from "p5";
+import { ImcharService } from './imchar.service';
 @Component({
     selector: 'imchar',
     templateUrl: './imchar.component.html',
@@ -7,8 +8,13 @@ import p5 from "p5";
 })
   
 export class ImcharComponent implements OnInit {
+    
+    constructor(public imcharService: ImcharService) {}
+    
+    prediction: string;
+    
     @ViewChild("canvas") public canvas: ElementRef;
-    ngOnInit() {
+    ngOnInit() { 
         let sketch = function(p) {
             var n = 16;
             var pixelArray = [];
@@ -75,5 +81,10 @@ export class ImcharComponent implements OnInit {
             }
         }
         this.canvas = new p5(sketch);
+    }
+    
+    getPrediction() {
+        this.prediction = this.imcharService.getPrediction();   
+        console.log(this.prediction);
     }
 }
