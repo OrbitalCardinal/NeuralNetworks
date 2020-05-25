@@ -2,22 +2,42 @@
 import numpy as np
 
 class NeuralNetwork():
-    def __init__(self,layers,neurons,activation,error_function,weights,biases,learning_rate):
-        self.layers = layers #number of layers
+    def __init__(self,neurons,activation,error_function,learning_rate, weights=None,biases=None):
+        self.layers = len(neurons) - 1 #number of layers
         self.neurons = neurons #number of neurons per layer
         self.activation = activation
         self.error_function = error_function #Error function
         self.weights = weights
         self.biases = biases
         self.learning_rate = learning_rate
-        self.success_rate = None
+        self.jacobians_list = []
+        if not self.weights:
+            self.weightInit()
+        if not self.biases:
+            self.biasesInit()
     
+    def weightInit(self):
+        self.weights = []
+        for i in range(self.layers):
+            random = np.random.uniform(low=-1, high=1,size=(self.neurons[i+1],self.neurons[i]))
+            self.weights.append(random)
+            
+    def biasesInit(self):
+        self.biases = []
+        for i in range(self.layers):
+            random = np.random.uniform(low=-1, high=1,size=(self.neurons[i+1],1))
+            self.biases.append(random)
+            
     def train(self,inputs, target):
         self.outputs = [inputs]
         self.deltas = []
         self.forwardPass()
         self.backwardPass(target)
         self.weightsUpdate()
+        if not self.weights:
+            self.weightInit()
+        if not self.biases:
+            self.biasesInit()
         
         
     def forwardPass(self):
@@ -32,18 +52,21 @@ class NeuralNetwork():
         self.error = targets - self.outputs[-1]
         for i in range(self.layers):
             jacobian = self.jacobian(self.neurons[-1-i], self.activation[-1-i],self.outputs[-1-i])
+            self.jacobians_list.append(jacobian)
             if i == 0:
                 if self.error_function == "SE":
                     s = -2 * jacobian * (targets - self.outputs[-1-i])
                 elif self.error_function == "MSE":
                     s = jacobian * (self.outputs[-1-i] - targets)
             else:
-                s = jacobian * self.weights[i].T * self.deltas[-1]
+                rhs = self.weights[-i].T * self.deltas[-1]
+                s = self.jacobians_list[-1] * rhs
             self.deltas.append(s)
     
     def weightsUpdate(self):
         for i in range(self.layers):
             self.weights[self.layers-1-i] -= self.learning_rate * self.deltas[i] * self.outputs[-2-i].T
+            # self.biases[self.layers-1-i] -= self.learning_rate * self.deltas[i]
     
     def predict(self,input):
         for i in range(self.layers):
