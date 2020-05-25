@@ -10,6 +10,7 @@ import { MainComponent } from './main/main.component';
 import { MnistComponent } from './mnist/mnist.component';
 import { PerceptronsComponent} from './perceptrons/perceptrons.component';
 import { AboutComponent} from './about/about.component';
+import {TrainerComponent} from './trainer/trainer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AboutComponent} from './about/about.component';
     MainComponent,
     MnistComponent,
     PerceptronsComponent,
-    AboutComponent
+    AboutComponent,
+    TrainerComponent,
   ],
   imports: [
     BrowserModule,
