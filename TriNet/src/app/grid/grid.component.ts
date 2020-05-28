@@ -20,6 +20,11 @@ export class GridComponent implements OnInit {
                 p.frameRate(60);
                 let canvas2 = p.createCanvas(w,h);
                 canvas2.parent("grid");
+                p.resetSketch();
+                var button = p.createButton("reset");
+                button.mousePressed(p.resetSketch);
+            }
+            p.resetSketch = function(){
                 for(var i=0; i<n; i++) {
                     for(var j=0; j<n; j++) {
                         var xpos = i * rows;
@@ -28,7 +33,7 @@ export class GridComponent implements OnInit {
                     }
                 }
             }
-            
+
             p.draw = function() {
                 p.background(0);
                 for(var i=0; i<pixelArray.length; i++) {
@@ -40,6 +45,9 @@ export class GridComponent implements OnInit {
                     }
                 }
             }
+
+          
+        
             
             class Pixel {
                 x1: number;
