@@ -11,7 +11,7 @@ app.use((req,res,next) => {
 
 app.use("/api/imchar",(req,res,next) => {
     res.status(200).json({
-        message:  "Prueba"
+        message:  "Increible"
     });
 });
 
