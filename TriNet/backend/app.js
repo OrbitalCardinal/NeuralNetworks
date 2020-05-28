@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-const spawn = require("child_process").spawn;
+var spawn = require("child_process").spawn;
 
 app.use((req,res,next) => {
     res.setHeader("Access-Control-Allow-Origin","*");
@@ -11,8 +11,12 @@ app.use((req,res,next) => {
 });
 
 app.use("/api/imchar",(req,res,next) => {
-    res.status(200).json({
-        message:  "Increible"
+    var msg;
+    var pythonProcess = spawn("python", ["./backend/pyTest.py"]);
+    pythonProcess.stdout.on("data", (data) => {
+        res.status(200).json({
+                message: data.toString().split("\n")[0]
+            });
     });
 });
 
