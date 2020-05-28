@@ -3,8 +3,10 @@
         <div class="imchar"><h2>IMCHAR</h2></div>
          <div class="p"><p>This application let you convert from an uploaded image of handwritten text imagen to characters.</p></div>
     </div>
-    <div class="cuadrado" id="grid"></div>
+    <div class="cuadrado">
+        <grid></grid>
+    </div>
     <div class="boton"><button class="uno">UPLOAD</button></div>
-    <div class="boton2" (click)="getPrediction()"><button class="dos">CONVERT</button></div>
+    <div class="boton2"><button class="dos" (click)="getPrediction()">CONVERT</button></div>
     <div class="cuadrado2">{{ prediction }}</div>
 </div>
