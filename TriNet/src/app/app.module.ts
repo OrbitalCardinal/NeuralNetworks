@@ -12,7 +12,6 @@ import { MnistComponent } from './mnist/mnist.component';
 import { PerceptronsComponent} from './perceptrons/perceptrons.component';
 import { AboutComponent} from './about/about.component';
 import { TrainerComponent } from './trainer/trainer.component';
-import { GridComponent } from './grid/grid.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,7 @@ import { GridComponent } from './grid/grid.component';
     MnistComponent,
     PerceptronsComponent,
     AboutComponent,
-    TrainerComponent,
-    GridComponent
+    TrainerComponent
   ],
   imports: [
     BrowserModule,
