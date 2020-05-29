@@ -13,11 +13,11 @@ import { TrainerComponent} from './trainer/trainer.component';
 //Routes for componentes
 const routes: Routes = [
     { path: '', component: MainComponent },
-    { path: 'imchar', component: ImcharComponent},
-    { path: 'mnist', component: MnistComponent},
-    { path: 'perceptrons', component: PerceptronsComponent},
-    { path: 'about', component: AboutComponent},
-    {path: 'trainer', component: TrainerComponent}
+    { path: 'imchar', component: ImcharComponent },
+    { path: 'mnist', component: MnistComponent },
+    { path: 'perceptrons', component: PerceptronsComponent },
+    { path: 'about', component: AboutComponent },
+    { path: 'trainer', component: TrainerComponent }
 ]
 
 @NgModule({

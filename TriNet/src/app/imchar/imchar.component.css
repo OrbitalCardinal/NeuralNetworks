@@ -4,13 +4,18 @@
     height: 100vh;
     margin: 0;
 }
+
+button {
+    padding: 1vw;
+    border-radius: .5vw;
+}
 @media screen and (max-width:411px){
     .contenedor{
         display: grid;
         grid-template-areas:
         "descripcion descripcion"
         "cuadrado cuadrado"
-        "boton boton2"
+        "buttonContainer buttonContainer"
         "cuadrado2 cuadrado2";
         grid-template-columns: 1fr 1fr;
         grid-template-rows: .5fr 1fr .5fr 1fr;
@@ -40,23 +45,33 @@
         grid-area: cuadrado2;
         border: 2px solid black;
     }
-    .boton{
-        grid-area: boton;
+    .buttonContainer {
+        grid-area: buttonContainer;
     }
-    .boton2{
-        grid-area: boton2;
-    }
-    .uno{
-        border: 2px solid aqua;
-        margin: 10px 10px;
-        background-color: white;
-        color:aqua;
-    }
+
     .dos{
-        border: 2px solid pink;
+        grid-area: boton2;
+        border: 2px solid green;
         margin: 10px 10px;
         background-color: white;
-        color: pink;
+        color: green;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .dos:hover {
+        background-color: lightgreen;
+    }
+    .tres {
+        border: 2px solid red;
+        margin: 10px 10px;
+        background-color: transparent;
+        color: red;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .tres:hover {
+        background-color:pink;
     }
 }
   
@@ -67,7 +82,7 @@
         grid-template-areas:
         "descripcion descripcion"
         "cuadrado cuadrado"
-        "boton boton2"
+        "buttonContainer buttonContainer"
         "cuadrado2 cuadrado2";
         grid-template-columns: 1fr 1fr;
         grid-template-rows: .5fr 1fr .5fr 1fr;
@@ -97,23 +112,33 @@
         grid-area: cuadrado2;
         border: 2px solid black;
     }
-    .boton{
-        grid-area: boton;
+    .buttonContainer {
+        grid-area: buttonContainer;
     }
-    .boton2{
-        grid-area: boton2;
-    }
-    .uno{
-        border: 2px solid aqua;
-        margin: 10px 10px;
-        background-color: white;
-        color:aqua;
-    }
+
     .dos{
-        border: 2px solid pink;
+        grid-area: boton2;
+        border: 2px solid green;
         margin: 10px 10px;
         background-color: white;
-        color: pink;
+        color: green;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .dos:hover {
+        background-color: lightgreen;
+    }
+    .tres {
+        border: 2px solid red;
+        margin: 10px 10px;
+        background-color: transparent;
+        color: red;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .tres:hover {
+        background-color:pink;
     }
 }
 
@@ -124,7 +149,7 @@
         grid-template-areas:
         "descripcion descripcion"
         "cuadrado cuadrado"
-        "boton boton2"
+        "buttonContainer buttonContainer"
         "cuadrado2 cuadrado2";
         grid-template-columns: 1fr 1fr;
         grid-template-rows: .5fr 1fr .5fr 1fr;
@@ -154,23 +179,33 @@
         grid-area: cuadrado2;
         border: 2px solid black;
     }
-    .boton{
-        grid-area: boton;
+    .buttonContainer {
+        grid-area: buttonContainer;
     }
-    .boton2{
-        grid-area: boton2;
-    }
-    .uno{
-        border: 2px solid aqua;
-        margin: 10px 10px;
-        background-color: white;
-        color:aqua;
-    }
+
     .dos{
-        border: 2px solid pink;
+        grid-area: boton2;
+        border: 2px solid green;
         margin: 10px 10px;
         background-color: white;
-        color: pink;
+        color: green;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .dos:hover {
+        background-color: lightgreen;
+    }
+    .tres {
+        border: 2px solid red;
+        margin: 10px 10px;
+        background-color: transparent;
+        color: red;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .tres:hover {
+        background-color:pink;
     }
 }
 
@@ -181,7 +216,7 @@
         grid-template-areas:
         "descripcion descripcion"
         "cuadrado cuadrado"
-        "boton boton2"
+        "buttonContainer buttonContainer"
         "cuadrado2 cuadrado2";
         grid-template-columns: 1fr 1fr;
         grid-template-rows: .5fr 1fr .5fr 1fr;
@@ -205,29 +240,38 @@
     }
     .cuadrado{
         grid-area: cuadrado;
-        
     }
     .cuadrado2{
         grid-area: cuadrado2;
         border: 2px solid black;
     }
-    .boton{
-        grid-area: boton;
+    .buttonContainer {
+        grid-area: buttonContainer;
     }
-    .boton2{
-        grid-area: boton2;
-    }
-    .uno{
-        border: 2px solid aqua;
-        margin: 10px 10px;
-        background-color: white;
-        color:aqua;
-    }
+
     .dos{
-        border: 2px solid pink;
+        grid-area: boton2;
+        border: 2px solid green;
         margin: 10px 10px;
         background-color: white;
-        color: pink;
+        color: green;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .dos:hover {
+        background-color: lightgreen;
+    }
+    .tres {
+        border: 2px solid red;
+        margin: 10px 10px;
+        background-color: transparent;
+        color: red;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .tres:hover {
+        background-color:pink;
     }
 }
 
@@ -241,7 +285,7 @@
         grid-template-areas:
         "descripcion descripcion descripcion descripcion"
         "cuadrado cuadrado cuadrado2 cuadrado2"
-        "boton boton2 espacio espacio";
+        "buttonContainer buttonContainer espacio espacio";
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: .5fr 1fr 1fr;
         grid-gap: 5px;
@@ -263,28 +307,47 @@
         grid-area: p;
     }
     .cuadrado{
+        display: flex;
+        flex-flow: column;
         grid-area: cuadrado;
     }
-    .cuadrado2{
+    .cuadrado2{   
         grid-area: cuadrado2;
         border: 2px solid black;
+        font-size: 7vw;
     }
-    .boton{
-        grid-area: boton;
+    
+    .cuadrado2 p{   
+        vertical-align: middle;
     }
-    .boton2{
-        grid-area: boton2;
+    
+    .buttonContainer {
+        grid-area: buttonContainer;
     }
-    .uno{
-        border: 2px solid aqua;
-        margin: 10px 10px;
-        background-color: white;
-        color:aqua;
-    }
+
     .dos{
-        border: 2px solid pink;
+        grid-area: boton2;
+        border: 2px solid green;
         margin: 10px 10px;
         background-color: white;
-        color: pink;
+        color: green;
+        font-weight: bold;
+        cursor: pointer;
     }
+    
+    .dos:hover {
+        background-color: lightgreen;
+    }
+    .tres {
+        border: 2px solid red;
+        margin: 10px 10px;
+        background-color: transparent;
+        color: red;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .tres:hover {
+        background-color:pink;
+    }
+    
 }
