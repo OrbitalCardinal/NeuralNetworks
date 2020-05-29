@@ -6,7 +6,7 @@ def function(x):
     return 1 + np.sin(6*np.pi/4* x)
 
 #Architecture
-neurons = [1,60,60,60,1]
+neurons = [1,10,10,10,1]
 activation = ["sigmoid","linear","sigmoid","linear"]
 error = "SE"
 #weights and biases initialization
@@ -18,11 +18,10 @@ b2 = np.matrix([[0.48]])
 weights = [w1,w2]
 biases = [b1,b2]
 lr = 0.01 #Learning rate
-#training set
 x1 = np.arange(-2,2,0.01)
 # NN1 = NN.NeuralNetwork(neurons, activation,error,lr,weights=weights, biases=biases)
 NN1 = NN.NeuralNetwork(neurons,activation,error,lr)
-iterations = 200
+iterations = 200000
 counter = 0
 for i in range(iterations):
     inputs = np.matrix([[np.random.choice(x1)]])
