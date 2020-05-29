@@ -13,4 +13,3 @@ for k in matrix_list:
                 o = str(k[i,j])
             archivo.write(o)
         archivo.write('\n')
-        archivo.write('\n')
