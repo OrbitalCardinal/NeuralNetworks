@@ -1,0 +1,4 @@
+256,256,1
+sigmoid,sigmoid
+SE
+0.01

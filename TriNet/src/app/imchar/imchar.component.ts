@@ -112,9 +112,10 @@ export class ImcharComponent implements OnInit{
         }
         
         var outputJson = {
-            data: outputString
+            data: outputString,
+            dimension: this.myp5.n
         }
-        this.http.post<{data: string}>("http://localhost:3000/api/imchar", outputJson)
+        this.http.post<{data: string, dimension: number}>("http://localhost:3000/api/imchar", outputJson)
         .subscribe(response => {
             this.prediction = response.data
         });
