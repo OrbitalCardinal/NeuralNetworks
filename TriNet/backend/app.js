@@ -25,13 +25,15 @@ app.use((req,res,next) => {
 
 app.post("/api/imchar", (req,res,next) => {
     var pythonProcess = spawn("python", ["./backend/pyTest.py", req.body.data]);
+    var dataString;
     pythonProcess.stdout.on("data", (data) => {
-        console.log(data.toString())
+        dataString = "a"
+    });
+    pythonProcess.on("close",(code) => {
         res.status(201).json({
-            // data: "data.toString()"
-            data: "a"
+            data: dataString
         });
-    })
+    });
 });
 
 module.exports = app;
