@@ -81,18 +81,26 @@ def readArchitecture(path):
     file.close()
     
 
-def parseRequestData(data, n): #Parse request string to numbers
-    n = int(n)
-    parsedData = data.split(" ")
-    parsedData = [[float(i)] for i in parsedData]
-    parsedData = np.asmatrix(parsedData)
-    # counter = 0
-    # matrixData = []
-    # for i in range(n):
-    #     temp_row = []
-    #     for j in range(n):
-    #         temp_row.append(parsedData[counter])
-    #         counter += 1
-    #     matrixData.append(temp_row)
-    # matrixData = np.asmatrix(matrixData)
-    return parsedData
+def parseRequestData(data, n, mode): #Parse request string to numbers
+    if mode == "s":
+        n = int(n)
+        parsedData = data.split(" ")
+        parsedData = [[float(i)] for i in parsedData]
+        parsedData = np.asmatrix(parsedData)
+        counter = 0
+    elif mode == "c":    
+        n = int(n)
+        parsedData = data.split(" ")
+        parsedData = [[float(i)] for i in parsedData]
+        parsedData = np.asmatrix(parsedData)
+        counter = 0
+        matrixData = []
+        for i in range(n):
+            temp_row = []
+            for j in range(n):
+                temp_row.append(parsedData[counter])
+                counter += 1
+            matrixData.append(temp_row)
+        matrixData = np.asmatrix(matrixData)
+        return matrixData
+    
