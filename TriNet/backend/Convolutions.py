@@ -1,5 +1,4 @@
 import numpy as np 
-import matplotlib.pyplot as plt
 import Kernels
 
 def crossCorr2d(input, kernel,padding = False):
@@ -56,3 +55,5 @@ def test_function():
             ax[-1].text(j,i,"{:0.2f}".format(filtered[i,j]), ha="center", va="center", color="orange")
     plt.imshow(filtered,cmap="gray")
     plt.show()
+    
+# test_function()

@@ -1,5 +1,4 @@
 import numpy as np 
-import matplotlib.pyplot as plt
 
 test = np.array([
     [0.77,-0.11,0.11,0.33,0.55,-0.11,0.33],
@@ -18,10 +17,6 @@ test2 = np.array([
     [0.3,0.6,0.1,0.8]
 ])
 
-# for i in range(test.shape[0]):
-#     for j in range(test.shape[1]):
-#         ax[-1].text(j,i,test[i,j], ha="center", va="center", color="red")
-
 def max_pooling(matrix, size, stride):
     h,w = matrix.shape
     if h%2!=0:
@@ -37,11 +32,6 @@ def max_pooling(matrix, size, stride):
             movex += stride
         movey += stride
     return pooled_matrix
-    
 
-# test = max_pooling(test2,2,2)
-# print(test)
-# plt.imshow(test,cmap="gray")
-# plt.show()
 
     

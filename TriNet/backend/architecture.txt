@@ -1,4 +1,4 @@
-256,1024,1024,26
+45,45,45,26
 sigmoid,sigmoid,sigmoid
 SE
 0.01

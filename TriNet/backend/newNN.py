@@ -3,10 +3,10 @@ import getData
 import NeuralNetworks as NN
 import sys
 
-n = 16 * 16
+n = 45
 
 #Architecture
-neurons = [n,n*4,n*4,26]
+neurons = [n,n,n,26]
 activation = ["sigmoid","sigmoid","sigmoid"]
 error = "SE"
 learning_rate = 0.01

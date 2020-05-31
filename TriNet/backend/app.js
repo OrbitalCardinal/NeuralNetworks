@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 var spawn = require("child_process").spawn;
+var pythonShell = require("python-shell");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -28,6 +29,7 @@ app.post("/api/imchar", (req,res,next) => {
     var dataString ;
     pythonProcess.stdout.on("data", (data) => {
         dataString = data.toString()
+        console.log(String.fromCharCode.apply(null,data))
     });
     pythonProcess.stderr.on("data",(data) => {
         dataString = data.toString()
@@ -41,6 +43,7 @@ app.post("/api/imchar", (req,res,next) => {
 
 app.post("/api/trainer", (req,res,next) =>{
     var pythonProcess = spawn("python", ["./backend/saveTrainData.py", req.body.data, req.body.dimension, req.body.resultado]);
+    pythonProcess.stdout.setEncoding("utf8")
     var dataString ;
     pythonProcess.stdout.on("data", (data) =>{
         dataString = data.toString()
