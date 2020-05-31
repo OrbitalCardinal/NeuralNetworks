@@ -6,13 +6,13 @@ import sys
 n = 16 * 16
 
 #Architecture
-neurons = [n,n,1]
-activation = ["sigmoid","sigmoid"]
+neurons = [n,n*4,n*4,26]
+activation = ["sigmoid","sigmoid","sigmoid"]
 error = "SE"
 learning_rate = 0.01
 NN1 = NN.NeuralNetwork(neurons, activation, error, learning_rate)
-getData.storeData("weights.txt", NN1.weights)
-getData.storeData("biases.txt", NN1.biases)
+getData.storeData("weights.txt", NN1.weights,"w")
+getData.storeData("biases.txt", NN1.biases,"w")
 
 file = open("architecture.txt","w")
 for i in range(len(neurons)):

@@ -1,1 +1,8 @@
 <h2>prueba</h2>
+<div id="grid"></div>
+<div class="cuadro">
+    <p>{{prediction}}</p>
+</div>
+<button (click)="reset()">reset </button>
+<button (click)="getPrediction()">enviar</button>
+<input type="text" [(ngModel)]="this.letra">

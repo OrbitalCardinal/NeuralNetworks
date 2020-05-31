@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpErrorResponse } from "@angular/common/http";
+import { FormsModule} from '@angular/forms';
 
 //Components
 import { AppComponent } from './app.component';
@@ -27,7 +28,8 @@ import { TrainerComponent } from './trainer/trainer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -24,7 +24,7 @@ app.use((req,res,next) => {
 // });
 
 app.post("/api/imchar", (req,res,next) => {
-    var pythonProcess = spawn("python", ["./backend/saveTrainData.py", req.body.data, req.body.dimension]);
+    var pythonProcess = spawn("python", ["./backend/processData.py", req.body.data, req.body.dimension]);
     var dataString ;
     pythonProcess.stdout.on("data", (data) => {
         dataString = data.toString()
@@ -35,6 +35,28 @@ app.post("/api/imchar", (req,res,next) => {
     pythonProcess.on("close",(code) => {
         res.status(201).json({
             data: dataString
+        });
+    });
+});
+
+app.post("/api/trainer", (req,res,next) =>{
+    var pythonProcess = spawn("python", ["./backend/saveTrainData.py", req.body.data, req.body.dimension, req.body.resultado]);
+    var dataString ;
+    pythonProcess.stdout.on("data", (data) =>{
+        dataString = data.toString()
+    });
+    pythonProcess.stderr.on("data", (data) =>{
+        dataString = data.toString()
+    })
+    pythonProcess.stdout.on("resuldado", (resultado) =>{
+        dataString = resultado.toString()
+    });
+    pythonProcess.stderr.on("resultado", (resultado) =>{
+        dataString = resultado.toString()
+    })
+    pythonProcess.on("close", (code) =>{
+        res.status(201).json({
+            resultado: dataString
         });
     });
 });

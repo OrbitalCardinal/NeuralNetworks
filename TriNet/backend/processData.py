@@ -4,6 +4,7 @@ import getData
 import NeuralNetworks as NN
 import ConvNet as CN
 import Kernels
+import string as st
 try:
     #Preparing input data
     input_dimension = int(sys.argv[2]) ** 2
