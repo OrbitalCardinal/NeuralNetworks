@@ -10,3 +10,4 @@ regla=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 regla[numero]=1
 regla=np.matrix(regla).reshape((len(regla),1))
 getData.storeData("./backend/targetData.txt",regla,"a")
+print("listo")
