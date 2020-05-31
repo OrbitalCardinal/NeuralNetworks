@@ -5,19 +5,32 @@ w1 = np.matrix([[1,2,3],[1,2,3],[1,2,3]])
 w2 = np.matrix([[4,5,6],[4,5,6]])
 w3 = np.matrix([[1],[2],[3]])
 matrix_list = [w1,w2,w3]
-def storeData(path, matrix_list):
-    file=open(path, 'w') #open file and set it write mode
-    for e in range(len(matrix_list)): 
-        k = matrix_list[e] #each element of the matrix list
-        for i in range(k.shape[0]): #number of rows of each matrix
-            for j in range(k.shape[1]): #number of columns of each matrix
-                o = str(k[i,j])+',' #txt values formatting
-                if j == k.shape[1]-1: # last value without ","
-                    o = str(k[i,j])
+def storeData(path, matrix_list, mode):
+    if mode == "w":
+        file=open(path, mode) #open file and set it write mode
+        for e in range(len(matrix_list)): 
+            k = matrix_list[e] #each element of the matrix list
+            for i in range(k.shape[0]): #number of rows of each matrix
+                for j in range(k.shape[1]): #number of columns of each matrix
+                    o = str(k[i,j])+',' #txt values formatting
+                    if j == k.shape[1]-1: # last value without ","
+                        o = str(k[i,j])
+                    file.write(o)
+                file.write('\n') #line break each row
+            file.write('\n') #line break each matrix
+        file.close()
+    elif mode == "a":
+        file=open(path, mode) #open file and set it write mode
+        for i in range(matrix_list.shape[0]): #number of rows of each matrix
+            for j in range(matrix_list.shape[1]): #number of columns of each matrix
+                o = str(matrix_list[i,j])+',' #txt values formatting
+                if j == matrix_list.shape[1]-1: # last value without ","
+                    o = str(matrix_list[i,j])
                 file.write(o)
             file.write('\n') #line break each row
-        file.write('\n') #line break each matrix
-    file.close()
+        file.write('\n') #line break each row
+        file.close()
+        
     
 def readData(path):
     file = open(path, "r") #open file and set it to read mode
