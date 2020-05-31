@@ -2,6 +2,7 @@ import numpy as np
 import sys
 import getData
 import NeuralNetworks as NN
+import string as st
 try:
     #Preparing input data
     input_dimension = int(sys.argv[2]) ** 2
@@ -16,7 +17,9 @@ try:
     biases = getData.readData("./backend/biases.txt")
     neurons, activation, error, learning_rate = getData.readArchitecture("./backend/architecture.txt")
     NN1 = NN.NeuralNetwork(neurons, activation, error, learning_rate, weights=weights, biases=biases)
-    print(NN1.predict(input_data).item())
+    
+    print(st.ascii_lowercase[np.argmax(NN1.predict(input_data))])
+    
     # for i in range(len(result)):
     #     print("file:",result[i].shape," object:",NN1.weights[i].shape)
 except Exception as e:

@@ -24,7 +24,7 @@ app.use((req,res,next) => {
 // });
 
 app.post("/api/imchar", (req,res,next) => {
-    var pythonProcess = spawn("python", ["./backend/saveTrainData.py", req.body.data, req.body.dimension]);
+    var pythonProcess = spawn("python", ["./backend/processData.py", req.body.data, req.body.dimension]);
     var dataString ;
     pythonProcess.stdout.on("data", (data) => {
         dataString = data.toString()
