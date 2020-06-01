@@ -28,7 +28,6 @@ app.post("/api/imchar", (req,res,next) => {
     var dataString ;
     pythonProcess.stdout.on("data", (data) => {
         dataString = data.toString()
-        console.log(String.fromCharCode.apply(null,data))
     });
     pythonProcess.stderr.on("data",(data) => {
         dataString = data.toString()
@@ -49,12 +48,6 @@ app.post("/api/trainer", (req,res,next) =>{
     });
     pythonProcess.stderr.on("data", (data) =>{
         dataString = data.toString()
-    })
-    pythonProcess.stdout.on("resuldado", (resultado) =>{
-        dataString = resultado.toString()
-    });
-    pythonProcess.stderr.on("resultado", (resultado) =>{
-        dataString = resultado.toString()
     })
     pythonProcess.on("close", (code) =>{
         res.status(201).json({

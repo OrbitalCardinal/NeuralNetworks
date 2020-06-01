@@ -41,12 +41,13 @@ ConvLayers = CN.ConvNet(
     ]
     )     
 
-iterations = 200000
+iterations = 30000
+print(len(inputs))
 for i in range(iterations):
     actual_input = ConvLayers.process(newInputs[i % len(inputs)])
     actual_input = actual_input.flatten()
     actual_input = actual_input.reshape((len(actual_input),1))
-    actual_target = targets[i % len(inputs)]
+    actual_target = targets[i % len(targets)]
     NN1.train(actual_input, actual_target)
     print("MSE:", np.power(NN1.error,2).sum()/len(NN1.error))
     print(i)
