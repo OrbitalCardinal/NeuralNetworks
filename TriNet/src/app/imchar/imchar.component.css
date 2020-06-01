@@ -310,6 +310,7 @@ button {
         display: flex;
         flex-flow: column;
         grid-area: cuadrado;
+        font-size: 7vw;
     }
     .cuadrado2{   
         grid-area: cuadrado2;

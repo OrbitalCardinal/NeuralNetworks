@@ -14,7 +14,7 @@ export class TrainerComponent implements OnInit{
     ngOnInit() { 
         let sketch = function(p) {
             p.output = [];
-            p.n = 9;
+            p.n = 18;
             var pixelArray = [];
             var w = 400;
             var h = 400;

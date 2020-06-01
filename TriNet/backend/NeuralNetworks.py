@@ -19,13 +19,17 @@ class NeuralNetwork():
     def weightInit(self):
         self.weights = []
         for i in range(self.layers):
-            random = np.random.uniform(low=-1, high=1,size=(self.neurons[i+1],self.neurons[i]))
+            # random = np.random.uniform(low=-1, high=1,size=(self.neurons[i+1],self.neurons[i]))
+            random = np.random.normal(0, 0.01,size=(self.neurons[i+1],self.neurons[i]))
+            # random = np.random.rand(self.neurons[i+1],self.neurons[i])
             self.weights.append(random)
             
     def biasesInit(self):
         self.biases = []
         for i in range(self.layers):
-            random = np.random.uniform(low=-1, high=1,size=(self.neurons[i+1],1))
+            # random = np.random.uniform(low=-1, high=1,size=(self.neurons[i+1],1))
+            random = np.random.normal(0,0.01,size=(self.neurons[i+1],1))
+            # random = np.random.rand(self.neurons[i+1],1)
             self.biases.append(random)
             
     def train(self,inputs, target):
@@ -46,6 +50,12 @@ class NeuralNetwork():
                 self.outputs.append(self.sigmoid(self.weights[i]*self.outputs[-1] + self.biases[i]))
             elif self.activation[i] == "linear":
                 self.outputs.append(self.linear(self.weights[i]*self.outputs[-1] + self.biases[i]))
+            elif self.activation[i] == "RELU":
+                self.outputs.append(self.RELU(self.weights[i]*self.outputs[-1] + self.biases[i]))
+            elif self.activation[i] == "softmax":
+                self.outputs.append(self.softmax(self.weights[i]*self.outputs[-1] + self.biases[i]))
+            elif self.activation[i] == "tanh":
+                self.outputs.append(self.tanh(self.weights[i]*self.outputs[-1] + self.biases[i]))
             
     
     def backwardPass(self,targets):
@@ -66,7 +76,7 @@ class NeuralNetwork():
     def weightsUpdate(self):
         for i in range(self.layers):
             self.weights[self.layers-1-i] -= self.learning_rate * self.deltas[i] * self.outputs[-2-i].T
-            # self.biases[self.layers-1-i] -= self.learning_rate * self.deltas[i]
+            self.biases[self.layers-1-i] -= self.learning_rate * self.deltas[i]
     
     def predict(self,input):
         for i in range(self.layers):
@@ -74,6 +84,12 @@ class NeuralNetwork():
                 input = self.sigmoid(self.weights[i]*input + self.biases[i])
             elif self.activation[i] == "linear":
                 input = self.linear(self.weights[i]*input + self.biases[i])
+            elif self.activation[i] == "RELU":
+                input = self.RELU(self.weights[i]*input + self.biases[i])
+            elif self.activation[i] == "softmax":
+                input = self.softmax(self.weights[i]*input + self.biases[i])
+            elif self.activation[i] == "tanh":
+                input = self.tanh(self.weights[i]*input + self.biases[i])
         return input
         
     
@@ -87,6 +103,22 @@ class NeuralNetwork():
             return 1
         return x
     
+    def RELU(self,x, deriv=False):
+        if deriv:
+            return np.where(x < 0, 0, 1)
+        return np.where(x < 0, 0, x)
+    
+    def softmax(self,x, deriv = False):
+        if deriv:
+            return 1 / (1 + np.exp(-x))
+        return np.log(1 + np.exp(x))
+    
+    def tanh(self,x,deriv=False):
+        if deriv:
+            return 1 - (x * x)
+        return np.tanh(x)
+        
+
     def jacobian(self,neurons,activation,x):
         result = np.zeros((neurons,neurons))
         x_counter = 0
@@ -97,6 +129,12 @@ class NeuralNetwork():
                         result[i,j] = self.sigmoid(x[x_counter],deriv=True)
                     elif activation == "linear":
                         result[i,j] = self.linear(x[x_counter],deriv=True)
+                    elif activation == "RELU":
+                        result[i,j] = self.RELU(x[x_counter],deriv=True)
+                    elif activation == "softmax":
+                        result[i,j] = self.softmax(x[x_counter],deriv=True)
+                    elif activation == "tanh":
+                        result[i,j] = self.tanh(x[x_counter],deriv=True)
                     x_counter += 1
         return result
         

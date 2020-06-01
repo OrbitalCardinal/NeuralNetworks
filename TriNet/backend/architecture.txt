@@ -1,4 +1,4 @@
-45,45,45,26
-sigmoid,sigmoid,sigmoid
+1024,26
+sigmoid
 SE
-0.01
+0.3

@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 var spawn = require("child_process").spawn;
-var pythonShell = require("python-shell");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

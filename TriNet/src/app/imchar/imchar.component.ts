@@ -13,7 +13,7 @@ export class ImcharComponent implements OnInit{
     ngOnInit() { 
         let sketch = function(p) {
             p.output = [];
-            p.n = 16;
+            p.n = 18;
             var pixelArray = [];
             var w = 400;
             var h = 400;
