@@ -41,7 +41,7 @@ ConvLayers = CN.ConvNet(
     ]
     )     
 
-iterations = 30000
+iterations = 500000
 print(len(inputs))
 for i in range(iterations):
     actual_input = ConvLayers.process(newInputs[i % len(inputs)])
