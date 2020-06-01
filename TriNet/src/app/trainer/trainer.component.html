@@ -1,8 +1,14 @@
-<h2>prueba</h2>
-<div id="grid"></div>
-<div class="cuadro">
-    <p>{{prediction}}</p>
+<div class="contenedor">
+    <h2 class="prueba">Trainer</h2>
+    <div class="cuadrado">
+        <div id="grid"></div>
+    </div>
+    <div class="cuadrado2">
+        <p>{{prediction}}</p>
+    </div>
+    <div class="buttonContainer">
+        <button class="tres" (click)="reset()">Reset </button>
+        <button class="dos"(click)="reset()">Save</button>
+        <input class="texto" type="text" [(ngModel)]="this.letra">
+    </div>
 </div>
-<button (click)="reset()">reset </button>
-<button (click)="getPrediction()">enviar</button>
-<input type="text" [(ngModel)]="this.letra">
