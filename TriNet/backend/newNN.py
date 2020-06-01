@@ -9,7 +9,7 @@ n = 1024
 neurons = [n,26]
 activation = ["sigmoid"]
 error = "SE"
-learning_rate = 0.5
+learning_rate = 0.3
 NN1 = NN.NeuralNetwork(neurons, activation, error, learning_rate)
 getData.storeData("weights.txt", NN1.weights,"w")
 getData.storeData("biases.txt", NN1.biases,"w")
