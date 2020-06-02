@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.17)  1 JUN 2020 17:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.17)  1 JUN 2020 22:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -669,55 +669,119 @@ Package xypdf Info: Line width: 0.39998pt on input line 45.
 <grid2.png, id=1, 544.0325pt x 613.29124pt>
 File: grid2.png Graphic file (type png)
 <use grid2.png>
-Package pdftex.def Info: grid2.png  used on input line 74.
+Package pdftex.def Info: grid2.png  used on input line 75.
 (pdftex.def)             Requested size: 113.81102pt x 128.29898pt.
-<response.png, id=2, 1574.88374pt x 632.3625pt>
-File: response.png Graphic file (type png)
-<use response.png>
-Package pdftex.def Info: response.png  used on input line 86.
-(pdftex.def)             Requested size: 512.1496pt x 205.64081pt.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/grid2.png>]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+<response.png, id=15, 1574.88374pt x 632.3625pt>
+File: response.png Graphic file (type png)
+<use response.png>
+Package pdftex.def Info: response.png  used on input line 87.
+(pdftex.def)             Requested size: 512.1496pt x 205.64081pt.
 <trainer.png, id=16, 715.67375pt x 692.5875pt>
 File: trainer.png Graphic file (type png)
 <use trainer.png>
-Package pdftex.def Info: trainer.png  used on input line 95.
+Package pdftex.def Info: trainer.png  used on input line 96.
 (pdftex.def)             Requested size: 170.71652pt x 165.1993pt.
- [2 </home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/response.png> </home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/trainer.png>]
+ [2 </home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/grid2.png> </home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/response.png>]
+
+LaTeX Warning: Reference `sec:Conclusion' on page 3 undefined on input line 109.
+
 <neuron.png, id=20, 1055.945pt x 786.94pt>
 File: neuron.png Graphic file (type png)
 <use neuron.png>
-Package pdftex.def Info: neuron.png  used on input line 123.
+Package pdftex.def Info: neuron.png  used on input line 124.
 (pdftex.def)             Requested size: 369.88582pt x 275.64926pt.
-<model.png, id=22, 714.67pt x 300.12125pt>
+[3 </home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/trainer.png>]
+<model.png, id=25, 714.67pt x 300.12125pt>
 File: model.png Graphic file (type png)
 <use model.png>
-Package pdftex.def Info: model.png  used on input line 131.
+Package pdftex.def Info: model.png  used on input line 132.
 (pdftex.def)             Requested size: 241.84842pt x 101.5636pt.
- [3 </home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/neuron.png>]
-<multi.png, id=27, 1830.84pt x 1319.93124pt>
+ [4 </home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/neuron.png> </home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/model.png>]
+<multi.png, id=32, 1830.84pt x 1319.93124pt>
 File: multi.png Graphic file (type png)
 <use multi.png>
-Package pdftex.def Info: multi.png  used on input line 151.
+Package pdftex.def Info: multi.png  used on input line 152.
 (pdftex.def)             Requested size: 284.52756pt x 205.11087pt.
- [4 </home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/model.png> </home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/multi.png>] [5] [6] (/home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/proyecto_p4.aux
+ [5 </home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/multi.png>]
+<cat.png, id=39, 1927.2pt x 1327.96124pt>
+File: cat.png Graphic file (type png)
+<use cat.png>
+Package pdftex.def Info: cat.png  used on input line 199.
+(pdftex.def)             Requested size: 327.20668pt x 225.46674pt.
+ [6]
+<kernels.png, id=43, 1386.8613pt x 305.7021pt>
+File: kernels.png Graphic file (type png)
+<use kernels.png>
+Package pdftex.def Info: kernels.png  used on input line 206.
+(pdftex.def)             Requested size: 483.69684pt x 106.61949pt.
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+Underfull \hbox (badness 10000) in paragraph at lines 210--214
+
+ []
+
+[7 </home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/cat.png> </home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/kernels.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 243--248
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 259.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 259.
+<bird.png, id=53, 1148.29pt x 649.42625pt>
+File: bird.png Graphic file (type png)
+<use bird.png>
+Package pdftex.def Info: bird.png  used on input line 278.
+(pdftex.def)             Requested size: 512.1496pt x 289.65276pt.
+ [8]
+<pooling.png, id=57, 1020.81375pt x 838.13126pt>
+File: pooling.png Graphic file (type png)
+<use pooling.png>
+Package pdftex.def Info: pooling.png  used on input line 288.
+(pdftex.def)             Requested size: 227.62204pt x 186.88327pt.
+ [9 </home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/bird.png (PNG copy)> </home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/pooling.png>]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 319.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 319.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 327.
+ [10] [11] [12]
+<inst.png, id=76, 937.5025pt x 772.8875pt>
+File: inst.png Graphic file (type png)
+<use inst.png>
+Package pdftex.def Info: inst.png  used on input line 528.
+(pdftex.def)             Requested size: 213.39566pt x 175.92062pt.
+ [13 </home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/inst.png>] [14] [15] [16] (/home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/proyecto_p4.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
-) ) 
+)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 7879 strings out of 492982
- 102936 string characters out of 6134896
- 233031 words of memory out of 5000000
- 11296 multiletter control sequences out of 15000+600000
- 10165 words of font info for 41 fonts, out of 8000000 for 9000
+ 8530 strings out of 492982
+ 109661 string characters out of 6134896
+ 647612 words of memory out of 5000000
+ 11931 multiletter control sequences out of 15000+600000
+ 10640 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,13n,32p,3326b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on /home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/proyecto_p4.pdf (6 pages, 432834 bytes).
+ 41i,13n,42p,3326b,1823s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb>
+Output written on /home/orbital/Documentos/CODE/python/neuralNetworks/Documentation/proyecto_p4.pdf (16 pages, 1531725 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 151 PDF objects out of 1000 (max. 8388607)
+ 95 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
