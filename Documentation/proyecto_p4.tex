@@ -78,7 +78,7 @@ Esta sección de la aplicación web contiene una cuadricula con la que se puede 
 \end{figure}
 Esta es la puerta para el uso de la red neuronal artificial. 
 En esta cuadricula es posible dibujar letras.
-\\ Al dibujar una letra en la cuadricula y presionar el botón de ``Predeict'' la aplicación web realiza una petición al servidor de la REST API de express,
+\\ Al dibujar una letra en la cuadricula y presionar el botón de ``Predict'' la aplicación web realiza una petición al servidor de la REST API de express,
 la cual recibe el estado de la cuadricula y sus dimensiones. \\
 Posteriormente el servidor de express ejecuta un proceso asincrono de python el cual ejecuta un script que lleva a cabo una transformación de los datos enviados en la petición  \\
 Por ultimo los datos transformados de la cuadricula son procesados por la red neuronal previamente entrenada, y devuelve una respuesta al frontend convertida en el caracter que la red neuronal predice (Figura \ref{response}).
@@ -90,7 +90,7 @@ Por ultimo los datos transformados de la cuadricula son procesados por la red ne
 \end{figure}
 \textbf{Para el desarrollo de la red neuronal artificial no se utilizo ninguna librería, todo código correspondiente al algoritmo de aprendizaje fue escrito desde cero.} \\
 Así mismo la red neuronal que procesa la información fue entrenada con un conjunto de datos creado desde cero, para esto se implemento una ruta oculta (figura \ref{trainer}) en la aplicación web en la que es posible utilizar la cuadricula para generar 
-un conjunto de entranamiento.
+un conjunto de entrenamiento.
 \begin{figure}[H]
     \centering
     \includegraphics[width=60mm]{trainer.png}
@@ -101,13 +101,13 @@ Los resultados de entrenar la red neuronal con estos datos son que, para las 26 
 comparten cierta similaridad. La red neuronal fue entrenada multiples veces para poder llegar a una configuración de hiperparametros con un mejor rendimiento. 
 
 \section{Introducción}\label{sec:Introduccion}
-El problema que se intenta resolver al diseñar este sistema, es el de reconocer texto manuscrito para su digitalización. 
+El problema que se intenta resolver al diseñar este sistema es el de reconocer texto manuscrito para su digitalización. 
 Se diseña una red neuronal convolucional que es entrenada con un conjunto de datos que contiene pequeñas imagenes de letras del abecedario en ingles. 
 En la sección \ref{sec:Resumen} de este documento, se indica en que consiste el proyecto.  \\
 La teoría necesaria para la realización de este proyecto se encuentra en la sección \ref{sec:Marco} \\
 En la sección \ref{sec:Desarrollo} se revisa la implementación a detalle del sistema al igual que el diseño de la red neuronal. 
 Por utlimo en la sección \ref{sec:Conclusion} se incluye una conclusión de lo que fue el proyecto incluyendo una introspección del equipo y trabajo a futuro. 
-Todas la referencias utilizadas para este proyecto se incluyen en la sección de referencias.
+Todas las referencias utilizadas para este proyecto se incluyen en la sección de referencias.
 
 \section{Marco teórico}\label{sec:Marco}
 Una red neuronal artificial es un modelo matemático y un algoritmo de aprendizage automático inpirado en el funcionamiento de las neuronas biologicas que se encuentran en el cerebro.
@@ -117,12 +117,12 @@ El elemento básico de una red neuronal es la neurona. Una neurona se compone de
     \item \textbf{Cuerpo celular}: Es la parte de la neurona encargada de procesar la suma de los impulsos electricos recibidos de las dentritas. Posteriormente, se decide si disparara otra señal electrica de salida por el axon mediante un umbral.
     \item \textbf{Axon}: Son las ramificaciones finales de la neurona, transportan el impulso de salida de la neurona tras haber sido procesado en el cuerpo celular.
     \item \textbf{Sinapsis}: El punto de contacto entre el axon de una neurona y la dendrita de otra neurona. 
-\end{enumerate} 
+\end{enumerate}
 Es la organización de las neuronas y la fuerza de las sinapsis lo que establece la función principal de una neurona. En la figura \ref{neuron} se puede observar cada una de las partes de la neurona. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=130mm]{neuron.png}
-    \caption{Neurona biologica}
+    \caption{Neurona biológica}
     \label{neuron}
 \end{figure}
 Con esto es posible construir un modelo matemático de una neurona artificial (figura \ref{modelo}). En este modelo se tiene un escalar $p$ que corresponde a la señal del impulso electrico recibido de otras neuronas, $p$ es multiplicado por $w$ que corresponde a la fuerza de la sinapsis. 
@@ -136,13 +136,13 @@ Este producto $wp$ es enviado a una sumatoria y se incluye una entrada de sesgo 
 De esta manera la salida de la neurona es calculada de la forma $a = f(wp + b)$. \\
 La organización de multiples capas y multiples neuronas es lo que le da el poder a este algoritmo. A esto se le conoce como \textbf{red neuronal profunda}. 
 Una red neuronal es también conocida como un aproximador de funciones universal, puesto es capaz de aproximar cualquier función teniendo la configuración adecuada.\\
-El modelo matematico de una capa de una red neuronal profunda es, un vector \textbf{p} de tamaño $R$ como entrada,un determinado número de neuronas $S$, seguido de una matriz de pesos \textbf{W} con un tamaño $S\times$$R$ y un vector \textbf{b} de sesgo de tamaño $S\times1$. 
+El modelo matematico de una capa de una red neuronal profunda es, un vector \textbf{p} de tamaño $R$ como entrada, un determinado número de neuronas $S$, seguido de una matriz de pesos \textbf{W} con un tamaño $S\times$$R$ y un vector \textbf{b} de sesgo de tamaño $S\times1$. 
 La operación \textbf{Wp + b} es enviada a una sumatoria que resulta en un vector de resultados \textbf{n} de tamaño $S\times1$ y que se dirige a una función de activación $f$ que da una vector \textbf{a} de tamaño $S\times1$ como salida. La salida de una capa es la entrada de la otra.
 Para definir la arquitectura de una red neuronal se necesita definir una serie de parametros:
 \begin{enumerate}
     \item Número de capas
     \item Número de neuronas por capa
-    \item Tasa de aprendizage
+    \item Tasa de aprendizaje
     \item Funciones de activación de las neuronas
     \item Función de error de la red
 \end{enumerate}
@@ -197,18 +197,18 @@ Las imagenes pueden ser representadas como matrices tridimensionales para imagen
 \begin{figure}[H]
     \centering
     \includegraphics[width=115mm]{cat.png}
-    \caption{Representación de imagenes en matrices}
+    \caption{Representación de imágenes en matrices}
     \label{cat}
 \end{figure}
 Una convolución se refiere al proceso de aplicar un filtro a una imagen, los filtros utilizados en estas capas son llamados \textbf{kernel}. Ejemplos comunes de kernels se pueden observar en la figura: 
 \begin{figure}[H]
     \centering 
     \includegraphics[width=170mm]{kernels.png}
-    \caption{Representación de imagenes en matrices}
+    \caption{Representación de imágenes en matrices}
     \label{kernels}
 \end{figure}
-Estos kernels son pequeñas matrices que se desplazan sobre la imagen realizando un producto punto, el pixel central se cons de manera queerva y se origina una nueva imagen.A esta operación se le llama \textbf{correlación cruzada} De esta manera los elementos de la matriz que más encajan con la imagen se veran resaltados en la nueva imagen. Al realizar esta operación de convolución es común que se reduzca la dimensionalidad de la matriz original, por lo que se utiliza la técnica de \textbf{padding} que 
-genera un borde de ceros para el pixel central del kernel encaje con el primer pixel de la imagen, de esta manera se conservan las dimensiones de la imagen original.
+Estos kernels son pequeñas matrices que se desplazan sobre la imagen realizando un producto punto, el pixel central se cons de manera queerva y se origina una nueva imagen. A esta operación se le llama \textbf{correlación cruzada} De esta manera los elementos de la matriz que más encajan con la imagen se veran resaltados en la nueva imagen. Al realizar esta operación de convolución es común que se reduzca la dimensionalidad de la matriz original, por lo que se utiliza la técnica de \textbf{padding} que 
+genera un borde de ceros para el píxel central del kernel encaje con el primer pixel de la imagen, de esta manera se conservan las dimensiones de la imagen original.
 Para la implementación de esta técnica se creo una clase especializada que incluye la lógica del algoritmo de convolución. \\
 Se crea un archivo en el que solo se declara las matrices de los kernels. Se incluye kernels para lineas verticales, lineas horizontales, lineas diagonales, difuminación, contornos, nitidez. \\
 \begin{lstlisting}[language=python]
@@ -241,7 +241,7 @@ top_sobel = np.array([[1,2,1],[0,0,0],[-1,-2,-1]])
 \end{lstlisting}
 
 En un archivo separado se importan los kernels y se escribe la función que realiza la operación de correlación cruzada. Se empieza por definir los tamaños de las entradas
-para poder recorrer ambas matrices, la de kernel con un tamaño $h\times$$w$ y la de entrada $H\times$$W$. La función puede ser ejecutada con un parametro opcional que es el del padding, en caso de que sea una valor verdadero 
+para poder recorrer ambas matrices, la de kernel con un tamaño $h\times$$w$ y la de entrada $H\times$$W$. La función puede ser ejecutada con un parametro opcional que es el del padding, en caso de que sea un valor verdadero 
 se crea una matriz expandida con zeros en los borders. La matriz origina con un tamaño de $h\times$$w$ se ve expandida a una matriz de tamaño $(h+2)\times$$(w+2)$, esto debido a que se agrega una fila de ceros por encima, 
 por debajo, por la izquieda y por la derecha. En caso de que el valor de padding sea falso, no se realiza la expansión y directamente se hacen las operaciones de correlación. De esta manera la nueva matriz que representa la imagen 
 termina con un tamaño de $(H-h+expansion+1)\times$$(W-w+expansion+1)$. El valor de retorno de la función es la nueva matriz.  \\
@@ -552,7 +552,7 @@ def process(self,inputImage):
 \end{lstlisting}
 \subsection{Arquitectura de la red neuronal del problema}
 El resultado de experimentar con distintas arquitecturas es una red neuronal con una capa de convolución sin padding, con los kernerls diagonales, verticales y horizontales. 
-El resultado de la capa de convolución es un vector de tamaño $1024\times1$ el cual es usado como entrada a la capa densa. Las capa densa esta formada por la capa de entradas que se dirige hacia la capa de salida, que da como resultado un
+El resultado de la capa de convolución es un vector de tamaño $1024\times1$ el cual es usado como entrada a la capa densa. La capa densa esta formada por la capa de entradas que se dirige hacia la capa de salida, que da como resultado un
 vector de tamaño $26\times1$, las posiciones de este vector representan cada una de las letras del abecedario en ingles. Esta ultima capa utiliza una función de activación sigmoidal, lo que regresa la probabilidad de que la entrada sea una de las 26 letras.
 Se utiliza una tasa de aprendizaje de 0.5 y se entrena por 500,000 iteraciones. Los pesos y los sesgos son guardados en archivos de texto al instanciar la red y utilizados actualizados despues de ser entrenada. El código correspondinete a la inicialización de la red neuronal es le siguiente:
 \begin{lstlisting}[language=python]
@@ -675,19 +675,20 @@ except Exception as e:
 \end{lstlisting}
 Una vez ejecutado el proceso de python el servidor recibe la respuesta de la red, y la envía al fronend de la aplicación donde muestra la letra que la red predijo.
 \subsection{Conclusiones}
-El proyecto se trabajó en parejas, por un lado la compañera Sonia Alejandra Treviño Rivera se encargó de la aplicación web, del preprocesamiento de datos entre el servidor y python y de la generación del conjunto 
+El proyecto se trabajó en parejas, por un lado, la compañera Sonia Alejandra Treviño Rivera se encargó de la aplicación web, del preprocesamiento de datos entre el servidor y python y de la generación del conjunto 
 de datos de entrnamiento de la red. Mientras que el compañero Edson Raul Cepeda Marquez se encargo de desarrollar el código correspondiente a la red neuronal y los algoritmos correspondientes. Los problemas principales eran muy variados,
 desde fallás en la lógica de la programación de los algoritmos, hasta problemas de comunicación entre la aplicación y el servidor. Estos problemas fueron resueltos en equipo recibiendo retroalimentación de cada uno e ideas para la resolución de estos problemas. 
 Una de las cosas que se puede compartir de esto, es que desarrollar los algoritmos de aprendizage automatico desde cero no es lo lo más eficiente, pero en cuestiones didacticas deja unas buenas bases del tema, lo que despues se traduce en la facilidad para usar
 librerias. Todo lo expuesto a lo largo del documento fue comprendido en su totalidad, por lo que los conocimientos adquiridos se ven reflejados en este documento. 
-Debido a la falta de tiempo, el conjunto de datos no es lo que esperabamos, se planeaba por lo menos 100 ejemplos por cada letra para que la red neuronal fuera entrenada de manera correcta, pero conseguimos hacer 30 por cada letra. Lo que de todos modos
-resulto en un porcentaje de exito del 80\% de las predicciones de la red.
+Debido a la falta de tiempo, el conjunto de datos no es lo que esperabamos, se planeaba por lo menos 100 ejemplos por cada letra para que la red neuronal fuera entrenada de manera correcta, pero conseguimos hacer 30 por cada letra. Lo que, de todos modos
+resulto en un porcentaje de exito del 80\% de las predicciones de la red. Como trabajo futuro se espera mejorar los datos de entrenamiento además de empezar a trabajar con técnicas de segmentación para fotografías con texto manuscrito.
+Algunos de los archivos incluidos en este proyecto no se incluyen pues son dependientes de la aplicación web. Los archivos mencionados en este documento como las clases y funciones pueden ser usadas libremente sin errores.
 \begin{thebibliography}{9}
 
     \bibitem{NND} 
     Hagan, M. (2014). Neural Network Design. Ok, Estados Unidos.
     \bibitem{Linear} 
-    Poole, D. (2015) Linear Algebra: A modern introduction. Stamford, CT. 
+    Poole, D. (2015) Linear Algebra: A modern introduction. Stamford, CT.
     \bibitem{conv} 
     Pokharna, H. (2016, 28 de julio). The best explanation of Convolutional Neural Networks. \\
     Recuperado de: \texttt{https://medium.com/technologymadeeasy} \\
@@ -699,10 +700,8 @@ resulto en un porcentaje de exito del 80\% de las predicciones de la red.
     
     
     \bibitem{powell} 
-    Powell, V. (2018). Image Kernels explained Visually
-     \\
+    Powell, V. (2018). Image Kernels explained Visually\\
     Recuperado de: \texttt{https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6}
-    
     
     \bibitem{codigo1}
     Edson Cepeda, Neural Networks, Github repository: \\
